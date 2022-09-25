@@ -76,7 +76,6 @@ async function getCurrency() {
             select2Value()
         }
     }
-
 }
 
 btnRepeat.addEventListener('click', () => {

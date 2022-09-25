@@ -1,8 +1,3 @@
-// 6. Реализуйте калькулятор валют. Есть два селекта - 
-// селект с исходной валюты, селект с той валютой, в которую мы хотим перевести деньги, инпут, 
-// в который вводится сумма для обмена. Курсы валют храните в массиве.
-// Сделайте так, чтобы в селектах нельзя было выбрать две одинаковых валюты.
-
 const input1 = document.querySelector('#input-1')
 const input2 = document.querySelector('#input-2')
 const select1 = document.querySelector('#select-1')
@@ -89,35 +84,3 @@ btnRepeat.addEventListener('click', () => {
     currency.classList.toggle('repeat')
     repeat.classList.toggle('repeat')
 })
-
-
-
-
-
-// const input1 = document.querySelector('#input-1')
-// const input2 = document.querySelector('#input-2')
-// const select1 = document.querySelector('#select-1')
-// const select2 = document.querySelector('#select-2')
-
-// input1.addEventListener('keydown', input1Value)
-// input2.addEventListener('keydown', input2Value)
-
-// let ExchangeRates = ['36.95', '0.027']
-
-// function input1Value(e) {
-
-//     const uah = ExchangeRates[1] * input1.value
-
-//     if (e.keyCode === 13) {
-//         input2.value = uah
-//     }
-// }
-
-// function input2Value(e) {
-
-//     const usd = ExchangeRates[0] * input2.value
-//     if (e.keyCode === 13) {
-//         input1.value = usd
-//     }
-
-// }

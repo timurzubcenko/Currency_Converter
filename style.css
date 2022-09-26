@@ -142,6 +142,26 @@ input {
     }
 }
 
+@media (max-width:425px) {
+
+    .main_currency {
+        gap: 18px;
+    }
+
+    .btn_repeat {
+        font-size: 34px;
+        padding: 34px;
+    }
+
+    select {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 20px;
+    }
+}
+
 @media (max-width:320px) {
     body {
         min-width: 320px;

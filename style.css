@@ -143,7 +143,6 @@ input {
 }
 
 @media (max-width:425px) {
-
     .main_currency {
         gap: 18px;
     }

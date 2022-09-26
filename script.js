@@ -3,10 +3,10 @@ const input2 = document.querySelector('#input-2')
 const select1 = document.querySelector('#select-1')
 const select2 = document.querySelector('#select-2')
 const currency = document.querySelector('.main_currency')
-const repeat = document.querySelector('#repeat')
 
 //Btn
 const btnRepeat = document.querySelector('.btn_repeat')
+const repeat = document.querySelector('#repeat')
 
 getCurrency()
 

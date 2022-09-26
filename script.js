@@ -15,12 +15,22 @@ async function getCurrency() {
     const result = await data
     console.log(result)
 
-    input1.oninput = select1Value
-    input1.addEventListener('keydown', input1KeyDown)
-    input2.oninput = select2Value
-    input2.addEventListener('keydown', input2KeyDown)
-    select1.oninput = select1Value
-    select2.oninput = select1Value
+    if (currency.classList.contains('repeat')) {
+        input1.oninput = select2Value
+        input1.addEventListener('keydown', input2KeyDown)
+        input2.oninput = select1Value
+        input2.addEventListener('keydown', input1KeyDown)
+        select1.oninput = select1Value
+        select2.oninput = select2Value
+    }
+    else {
+        input1.oninput = select1Value
+        input1.addEventListener('keydown', input1KeyDown)
+        input2.oninput = select2Value
+        input2.addEventListener('keydown', input2KeyDown)
+        select1.oninput = select2Value
+        select2.oninput = select1Value
+    }
 
     function select1Value() {
         if (select1.value == 100 && select2.value == 100) {
@@ -96,6 +106,7 @@ async function getCurrency() {
             select2Value()
         }
     }
+
 }
 
 btnRepeat.addEventListener('click', () => {

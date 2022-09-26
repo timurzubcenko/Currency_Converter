@@ -123,8 +123,6 @@ input {
     transform: rotate(360deg);
 }
 
-.second_currency {}
-
 @media (max-width:900px) {
     .main_currency {
         height: auto;

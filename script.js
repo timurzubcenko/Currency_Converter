@@ -101,12 +101,12 @@ async function getCurrency() {
     btnRepeat.addEventListener('click', () => {
         repeat.classList.toggle('repeat')
 
-        let temp = select1.value
+        let tempSelect = select1.value
         select1.value = select2.value
-        select2.value = temp
+        select2.value = tempSelect
 
-        let temp2 = input1.value
+        let tempInput = input1.value
         input1.value = input2.value
-        input2.value = temp2
+        input2.value = tempInput
     })
 } 

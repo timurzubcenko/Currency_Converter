@@ -55,13 +55,33 @@ async function getCurrency() {
     }
 
     function select2Value() {
+        if (select2.value == 100 && select1.value == 100) {
+            input1.value = ""
+            input2.value = ""
+            currency.classList.add('no')
+        } else {
+            currency.classList.remove('no')
+        }
+
         if (select1.value == 100) {
             const firstСurrency = (parseFloat(input2.value) * result[select2.value].rate).toFixed(2)
+            input1.value = firstСurrency
+        }
+        else if (select2.value == 100) {
+            const firstСurrency = (parseFloat(input2.value) / result[select1.value].rate).toFixed(2)
             input1.value = firstСurrency
         }
         else {
             const firstСurrency = (parseFloat(input2.value) / result[select1.value].rate * result[select2.value].rate).toFixed(2)
             input1.value = firstСurrency
+        }
+
+        if (select2.value === select1.value) {
+            input1.value = ""
+            input2.value = ""
+            currency.classList.add('no')
+        } else {
+            currency.classList.remove('no')
         }
     }
 
@@ -76,6 +96,7 @@ async function getCurrency() {
             select2Value()
         }
     }
+
 }
 
 btnRepeat.addEventListener('click', () => {

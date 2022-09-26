@@ -3,6 +3,7 @@ const input2 = document.querySelector('#input-2')
 const select1 = document.querySelector('#select-1')
 const select2 = document.querySelector('#select-2')
 const currency = document.querySelector('.main_currency')
+const repeat = document.querySelector('#repeat')
 
 //Btn
 const btnRepeat = document.querySelector('.btn_repeat')
@@ -15,22 +16,12 @@ async function getCurrency() {
     const result = await data
     console.log(result)
 
-    if (currency.classList.contains('repeat')) {
-        input1.oninput = select2Value
-        input1.addEventListener('keydown', input2KeyDown)
-        input2.oninput = select1Value
-        input2.addEventListener('keydown', input1KeyDown)
-        select1.oninput = select1Value
-        select2.oninput = select2Value
-    }
-    else {
-        input1.oninput = select1Value
-        input1.addEventListener('keydown', input1KeyDown)
-        input2.oninput = select2Value
-        input2.addEventListener('keydown', input2KeyDown)
-        select1.oninput = select2Value
-        select2.oninput = select1Value
-    }
+    input1.oninput = select1Value
+    input1.addEventListener('keydown', input1KeyDown)
+    input2.oninput = select2Value
+    input2.addEventListener('keydown', input2KeyDown)
+    select1.oninput = select1Value
+    select2.oninput = select1Value
 
     function select1Value() {
         if (select1.value == 100 && select2.value == 100) {
@@ -82,7 +73,7 @@ async function getCurrency() {
             input1.value = firstСurrency
         }
         else {
-            const firstСurrency = (parseFloat(input2.value) / result[select1.value].rate * result[select2.value].rate).toFixed(2)
+            const firstСurrency = (parseFloat(input2.value) * result[select2.value].rate / result[select1.value].rate).toFixed(2)
             input1.value = firstСurrency
         }
 
@@ -107,10 +98,15 @@ async function getCurrency() {
         }
     }
 
-}
+    btnRepeat.addEventListener('click', () => {
+        repeat.classList.toggle('repeat')
 
-btnRepeat.addEventListener('click', () => {
-    const repeat = document.querySelector('#repeat')
-    currency.classList.toggle('repeat')
-    repeat.classList.toggle('repeat')
-})
+        let temp = select1.value
+        select1.value = select2.value
+        select2.value = temp
+
+        let temp2 = input1.value
+        input1.value = input2.value
+        input2.value = temp2
+    })
+} 
